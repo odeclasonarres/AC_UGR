@@ -8,7 +8,7 @@
 
 int main(int argc, char **argv)   {
 
-   int i, n = 7,chunk, a[n],suma=0;
+   int i, n = 16,chunk, a[n],suma=0;
 
    if(argc < 2)     {
           fprintf(stderr,"\nFalta chunk \n");
@@ -24,9 +24,9 @@ int main(int argc, char **argv)   {
    {   suma = suma + a[i];
        printf(" thread %d suma a[%d] suma=%d \n",
              omp_get_thread_num(),i,suma);
-   } 
+   }
 
-   printf("Fuera de 'parallel for' suma=%d\n",suma); 
+   printf("Fuera de 'parallel for' suma=%d\n",suma);
 
    return(0);
 }
