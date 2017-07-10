@@ -1,0 +1,1 @@
+- la condición private(alguna(s) variables) hace que cada hebra tenga una copia privada de dicha(s) varible(s).

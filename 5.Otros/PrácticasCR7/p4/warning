@@ -1,0 +1,3 @@
+figura1-modificadob.c:9:8: warning: anonymous type with no linkage used to declare variable ‘<anonymous struct> s [5000]’ with linkage
+ }s[5000];
+        ^

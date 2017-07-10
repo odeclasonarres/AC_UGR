@@ -1,0 +1,2 @@
+Lo que pasa con reduction es que todas las hebras tienen una copia distinta de la variable que vaya entre los paréntesis,
+pero luego esa variable constará de la suma del conjunto de variables privadas 8=D viva willyrex 

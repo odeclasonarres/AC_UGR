@@ -1,0 +1,48 @@
+#pragma omp directiva [cláusula,...]
+
+				Cláusula
+
+Control del nº threads:		
+	if
+	num_threads
+
+control del ámbito:
+	shared(x)	// Comparte las variables entre parentesis entre todas las hebras.
+	private(x)	// Hace que las variables aunque estén declaradas fuera son privadas para cada hebra (cada una tiene una copia).
+	lastprivate(x)	// Utiliza el valor final de la última hebra que utiliza dicha variable y modifica el valor externo al pragma.
+	firstprivate(x) // Utiliza el valor inicial de la variable declarada fuera pero no modifica valores externos a pragma.
+	default		// Puede tomar dos valores (shared|none). Por defecto si no ponemos nada default(shared). Si es none, especificamos 				// todas las variables.
+	reduction	// reduction(operador: var) por ejemplo reduction(+,var) se suman todas las variables que llegan. (+,-,&,||,|) 	var=0
+			//												  (&&,*) 	var=1
+
+copia de valores:
+	copyin
+	copyprivate (var)	// Copia el valor a los demás threads.
+				// copyprivate(var) como sólo hace una única hebra, hay que utilizarlo junto con la directiva single.
+
+planif. iteraciones de un bucle:
+	shedule
+	ordered
+
+NO espera:
+	nowait
+
+
+Ámbito de las variables:
+
+	En general, para las variables que no se usan en las cláusulas, declaradas fuera de una región son compartidas por las threads. En cambio las variables declaradas dentro de la región, son privadas.
+
+Excepciones:
+
+Cuando tienes las variables dentro del for (Es privada)
+Variables estáticas. (Es privada)
+
+
+
+
+
+
+
+
+
+
